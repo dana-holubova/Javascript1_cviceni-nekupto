@@ -1,4 +1,5 @@
 # Javascript1_cviceni-nekupto
+## Nekup to, třídy
 *JavaScriptem upravte třídy.*
 
 Vytvořte si repozitář ze šablony [cviceni-nekupto](https://github.com/Czechitas-podklady-WEB/cviceni-nekupto). Repozitář obsahuje stránku, která nabízí několik neotřelých produktů.
@@ -10,3 +11,26 @@ Vytvořte si repozitář ze šablony [cviceni-nekupto](https://github.com/Czechi
 Na konci by stránka v prohlížeči měla vypadat jako na obrázku níže:
 
 ![Screen - nekupto](https://kodim.cz/cms/assets/vyvoj-webu/js1/lekce/dom-innerhtml/cv-tridy-innerhtml/nekupto-tridy/screen-nekupto.png)
+
+## Nekup to, obsah
+
+Pokračujte v předchozím cvičení. Všimněte si, že v souboru `index.js` jsou uloženy údaje k jednotlivým produktům. Budeme chtít obsah naší stránky vygenerovat z těchto dat místo abychom je měli natvrdo zadrátované v HTML kódu.
+
+1. Otevřete si soubor `index.html` a zkopírujte si HTML obsah prvního produktu a vytvořte z něj řetězec v přiloženém JavaScriptovém souboru. Váš kód může vypadat třeba takto.
+```
+const product1HTML = `
+  <img class="card-img-top" src="images/destniklobouk.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h2 class="card-title">Deštníklobouk</h2>
+    <p class="card-text">Vynikající pokud si často zapomínáte deštník a nechcete být nikdy překvapeni nečekanou přeháňkou.</p>
+  </div>
+  <button type="button" class="btn btn-lg btn-primary btn-block">Koupit</button>
+`;
+```
+2. Obsah prvního produktu v souboru `index.html` můžeme nyní smazat. Výsledné HTML pak bude vypadat takto.
+```
+<div id="product1" class="card mb-4 box-shadow"></div>
+```
+3. Pomocí interpolace řetězců předělejte váš JavaScriptový kód tak, že do vašeho řetězce s produktem vložíte obsah vlastností `image`, `name` a `description`.
+4. Do nějaké proměnné si uložte element prvního produktu a nastavte jeho `innerHTML` na váš sestavený řetězec. Tímto na stránku vložíme obrázek prvního produktu.
+5. Opakujte tento postup pro všechny ostatní produkty. Na konci byste měli dospět do stavu, kdy soubor `index.html` vůbec neosahuje vnitřek karet pro jednotlivé produkty. Jejich obsah je celý vyroben JavaScriptem z připravených dat.
